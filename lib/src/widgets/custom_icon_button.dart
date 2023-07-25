@@ -26,22 +26,15 @@ class CustomIconButton extends StatelessWidget {
     return Material(
       child: Padding(
         padding: margin,
-        child: !kIsWeb &&
-                (platform == TargetPlatform.iOS ||
-                    platform == TargetPlatform.macOS)
-            ? CupertinoButton(
-                onPressed: onTap,
-                padding: padding,
-                child: icon,
-              )
-            : InkWell(
-                onTap: onTap,
-                borderRadius: BorderRadius.circular(100.0),
-                child: Padding(
-                  padding: padding,
-                  child: icon,
-                ),
-              ),
+        child: InkWell(
+          focusNode: FocusNode(),
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(100.0),
+          child: Padding(
+            padding: padding,
+            child: icon,
+          ),
+        ),
       ),
     );
   }

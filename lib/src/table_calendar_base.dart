@@ -187,6 +187,7 @@ class _TableCalendarBaseState extends State<TableCalendarBase> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return InkWell(
+          focusNode: FocusNode(),
           //  onVerticalSwipe: _canScrollVertically ? widget.onVerticalSwipe : null,
           //  swipeConfig: widget.simpleSwipeConfig,
           child: ValueListenableBuilder<double>(

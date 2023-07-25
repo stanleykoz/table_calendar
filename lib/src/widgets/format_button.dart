@@ -40,19 +40,12 @@ class FormatButton extends StatelessWidget {
 
     final platform = Theme.of(context).platform;
 
-    return !kIsWeb &&
-            (platform == TargetPlatform.iOS || platform == TargetPlatform.macOS)
-        ? CupertinoButton(
-            onPressed: () => onTap(_nextFormat()),
-            padding: EdgeInsets.zero,
-            child: child,
-          )
-        : InkWell(
-            borderRadius:
-                decoration.borderRadius?.resolve(Directionality.of(context)),
-            onTap: () => onTap(_nextFormat()),
-            child: child,
-          );
+    return InkWell(
+      borderRadius:
+          decoration.borderRadius?.resolve(Directionality.of(context)),
+      onTap: () => onTap(_nextFormat()),
+      child: child,
+    );
   }
 
   String get _formatButtonText => showsNextFormat

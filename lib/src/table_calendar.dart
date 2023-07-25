@@ -559,6 +559,7 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
             dayBuilder: (context, day, focusedMonth) {
               return Material(
                 child: InkWell(
+                  focusNode: FocusNode(),
                   // behavior: widget.dayHitTestBehavior,
                   onTap: () => _onDayTapped(day),
                   onLongPress: () => _onDayLongPressed(day),
