@@ -76,8 +76,7 @@ class CalendarPage extends StatelessWidget {
       decoration: dowDecoration,
       children: List.generate(
         7,
-        (index) =>
-            TableRowInkWell(child: dowBuilder!(context, visibleDays[index])),
+        (index) => dowBuilder!(context, visibleDays[index]),
       ).toList(),
     );
   }
@@ -90,7 +89,9 @@ class CalendarPage extends StatelessWidget {
               decoration: rowDecoration,
               children: List.generate(
                 7,
-                (id) => dayBuilder(context, visibleDays[index + id]),
+                (id) => TableRowInkWell(
+                    onTap: () {},
+                    child: dayBuilder(context, visibleDays[index + id])),
               ),
             ))
         .toList();
