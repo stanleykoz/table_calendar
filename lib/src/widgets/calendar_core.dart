@@ -100,9 +100,12 @@ class CalendarCore extends StatelessWidget {
                   _getFocusedDay(calendarFormat, previousFocusedDay, index);
             }
 
-            return SizedBox(
-              height: constrainedRowHeight ?? rowHeight,
-              child: dayBuilder(context, day, baseDay),
+            return InkWell(
+              onTap: () {},
+              child: SizedBox(
+                height: constrainedRowHeight ?? rowHeight,
+                child: dayBuilder(context, day, baseDay),
+              ),
             );
           },
           dowHeight: dowHeight,
