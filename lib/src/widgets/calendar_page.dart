@@ -91,6 +91,13 @@ class CalendarPage extends StatelessWidget {
                 7,
                 (id) => TableRowInkWell(
                     onTap: () {},
+                    overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                      (states) {
+                        return states.contains(MaterialState.pressed)
+                            ? Colors.transparent
+                            : null;
+                      },
+                    ),
                     child: dayBuilder(context, visibleDays[index + id])),
               ),
             ))
