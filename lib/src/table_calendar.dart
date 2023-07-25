@@ -557,11 +557,13 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
               return dowCell;
             },
             dayBuilder: (context, day, focusedMonth) {
-              return InkWell(
-                // behavior: widget.dayHitTestBehavior,
-                onTap: () => _onDayTapped(day),
-                onLongPress: () => _onDayLongPressed(day),
-                child: _buildCell(day, focusedMonth),
+              return Material(
+                child: InkWell(
+                  // behavior: widget.dayHitTestBehavior,
+                  onTap: () => _onDayTapped(day),
+                  onLongPress: () => _onDayLongPressed(day),
+                  child: _buildCell(day, focusedMonth),
+                ),
               );
             },
           ),
