@@ -1,6 +1,7 @@
 // Copyright 2019 Aleksander Woźniak
 // SPDX-License-Identifier: Apache-2.0
 
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
@@ -58,7 +59,7 @@ class CalendarHeader extends StatelessWidget {
             ),
           Expanded(
             child: headerTitleBuilder?.call(context, focusedMonth) ??
-                GestureDetector(
+                InkWell(
                   onTap: onHeaderTap,
                   onLongPress: onHeaderLongPress,
                   child: Text(
