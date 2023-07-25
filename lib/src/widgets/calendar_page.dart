@@ -1,6 +1,7 @@
 // Copyright 2019 Aleksander Woźniak
 // SPDX-License-Identifier: Apache-2.0
 
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CalendarPage extends StatelessWidget {
@@ -75,7 +76,8 @@ class CalendarPage extends StatelessWidget {
       decoration: dowDecoration,
       children: List.generate(
         7,
-        (index) => dowBuilder!(context, visibleDays[index]),
+        (index) =>
+            TableRowInkWell(child: dowBuilder!(context, visibleDays[index])),
       ).toList(),
     );
   }
