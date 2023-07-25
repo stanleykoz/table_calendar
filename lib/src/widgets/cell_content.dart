@@ -169,7 +169,7 @@ class CellContent extends StatelessWidget {
 
     return Semantics(
       label: semanticsLabel,
-      excludeSemantics: true,
+      excludeSemantics: false,
       child: cell,
     );
   }
